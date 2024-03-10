@@ -1,5 +1,5 @@
-import LoadMore from "../components/LoadMore";
-import { fetchData } from "./actions";
+import LoadMore from "@/components/LoadMore";
+import { fetchData } from "@/lib/actions";
 
 async function Home() {
   const data = await fetchData(1);

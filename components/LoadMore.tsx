@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchData } from "@/app/actions";
+import { fetchData } from "@/lib/actions";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -16,7 +16,7 @@ function LoadMore() {
   useEffect(() => {
     if (inView) {
       fetchData(page).then((response) => {
-        setData([...data, ...response]);
+        setData([...data, response]);
         ++page;
       });
     }
